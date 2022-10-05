@@ -16,7 +16,7 @@ bot.command('test2',ctx=>{
   ctx.reply('hi')
 })
 
-// bot.telegram.setWebhook(`https://webhooktest-three.vercel.app:8443/bot`)
+bot.telegram.setWebhook(`https://webhooktest-three.vercel.app:8443/bot`)
 
 // bot.startWebhook(`/bot`,null,8443)
 
