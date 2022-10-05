@@ -17,8 +17,6 @@ bot.command('test2',ctx=>{
 
 bot.telegram.setWebhook(`${process.env.DOMAIN}:8443/${process.env.TOKEN}`)
 
-bot.startWebhook(`/${process.env.TOKEN}`,null,8443);
+bot.startWebhook(`/${process.env.TOKEN}`,null,8443)
 
-bot.launch()
-.then(()=>console.log("the bot is running on glitch"))
-.catch((e)=>console.log(e))
+bot.startPolling()
