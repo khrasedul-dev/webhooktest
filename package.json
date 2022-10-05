@@ -11,6 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "https": "^1.0.0",
     "telegraf": "^4.10.0"
   }
 }
