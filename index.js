@@ -29,4 +29,6 @@ bot.command('test2',ctx=>{
 //     }
 // })
 
-createServer(null, bot.createWebhook({domain: process.env.DOMAIN})).listen(8443)
+createServer(null, async (req,res)=>{
+    await bot.createWebhook({domain: process.env.DOMAIN})
+}).listen(8443)
