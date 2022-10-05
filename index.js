@@ -21,3 +21,10 @@ bot.telegram.setWebhook(`https://webhooktest-three.vercel.app:8443/bot`)
 bot.startWebhook(`/bot`,null,8443)
 
 bot.launch()
+
+setInterval(()=>{
+    fetch("https://webhooktest-three.vercel.app")
+    .then((data)=>data.json())
+    .then((data)=>console.log(data))
+    .catch((e)=>console.log(e))
+},1000)
