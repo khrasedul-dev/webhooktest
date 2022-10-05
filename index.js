@@ -20,15 +20,15 @@ bot.command('test2',ctx=>{
 
 // bot.startWebhook(`/${process.env.TOKEN}`,null,8443)
 
-// bot.launch({
-//     webhook: {
-//         domain: process.env.DOMAIN,
-//         port: 8443,
-//         hookPath: "/"+process.env.TOKEN,
-//         secretToken: process.env.TOKEN
-//     }
-// })
+bot.launch({
+    webhook: {
+        domain: process.env.DOMAIN,
+        port: 8443,
+        hookPath: "/"+process.env.TOKEN,
+        secretToken: process.env.TOKEN
+    }
+})
 
-createServer(null, async (req,res)=>{
-    await bot.createWebhook({domain: process.env.DOMAIN})
-}).listen(8443)
+// createServer(null, async (req,res)=>{
+//     await bot.createWebhook({domain: process.env.DOMAIN})
+// }).listen(8443)
