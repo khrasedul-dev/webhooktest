@@ -19,7 +19,7 @@ bot.command('test2',ctx=>{
 })
 
 app.use(bot.webhookCallback('/'))
-bot.telegram.setWebhook("https://webhooktest-three.vercel.app")
+bot.telegram.setWebhook("https://webhooktest-three.vercel.app:8443")
 
 const port = process.env.PORT || 5000;
 
