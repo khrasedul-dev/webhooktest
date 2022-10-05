@@ -1,5 +1,7 @@
 const {Telegraf} = require('telegraf')
-const {createServer} = require('https')
+const express = require('express')
+
+const app = express()
 
 const bot = new Telegraf("5544511977:AAG3jPCW9JcdHo1r2YguoYUXgmTKAvwJaSM")
 
@@ -16,8 +18,9 @@ bot.command('test2',ctx=>{
   ctx.reply('hi')
 })
 
-bot.telegram.setWebhook(`https://webhooktest-three.vercel.app:8443/bot`)
+app.use(bot.webhookCallback('/'))
+bot.telegram.setWebhook("https://webhooktest-three.vercel.app")
 
-bot.startWebhook(`/bot`,null,8443)
+const port = process.env.PORT || 5000;
 
-bot.launch()
+app.listen(port, () => `Server running on port ${port} 🔥`);
